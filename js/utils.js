@@ -1,51 +1,45 @@
-// utils.js
-const basePath = "/digicheck-landing/";
+const isLocal = window.location.protocol === "file:";
+const basePath = isLocal ? "" : "/digicheck-landing/";
 
 function goTo(pagePath) {
-  window.location.href = basePath + pagePath;
+  const fullPath = basePath + pagePath;
+  window.location.href = fullPath;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Gestion du bouton "close"
   const closeButton = document.getElementById("close-button");
   if (closeButton) {
     closeButton.addEventListener("click", goToDashboard);
   }
 
-  // Gestion du bouton "back"
   const backButton = document.getElementById("back-button");
   if (backButton) {
     backButton.addEventListener("click", goBackOrHome);
   }
 });
 
-// Fonction de navigation générique
-function goTo(pagePath) {
-  window.location.href = pagePath;
-}
-
-// Navigation vers des pages précises
 function goToDashboard() {
-  goTo("pages/dashboard.html");
+  goTo("dashboard.html");
 }
 
 function goToCreateCheck() {
-  goTo("pages/createCheck.html");
+  goTo("createCheck.html");
 }
 
 function goToMyEmittedChecks() {
-  goTo("pages/myEmittedCheck.html");
+  goTo("myEmittedCheck.html");
 }
 
 function goToFAQ() {
-  goTo("pages/faq.html");
+  goTo("faq.html");
 }
 
 function goToHome() {
-  goTo("index.html");
+  window.location.href = isLocal
+    ? "index.html"
+    : "/digicheck-landing/index.html";
 }
 
-// Fonction pour revenir à la page précédente ou à l'accueil
 function goBackOrHome() {
   if (document.referrer && document.referrer !== location.href) {
     window.history.back();
