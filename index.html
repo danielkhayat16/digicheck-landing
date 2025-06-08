@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DigiCheck — Chèque Digital Universel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-10 text-center">
+        <h1 class="text-4xl font-bold mb-2">DigiCheck</h1>
+        <p class="text-lg text-gray-600 max-w-xl mx-auto">Le chèque digital universel, sécurisé et interbancaire.</p>
+        <a href="#demo"
+            class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+            Voir la démo
+        </a>
+    </header>
+
+    <!-- Pourquoi DigiCheck -->
+    <section id="why" class="max-w-4xl mx-auto mt-16 px-4">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Pourquoi DigiCheck ?</h2>
+        <ul class="list-disc list-inside space-y-3 text-lg text-gray-700 max-w-2xl mx-auto">
+            <li>📄 Fini les chèques papier perdus ou falsifiés</li>
+            <li>🔐 Signature numérique vérifiable</li>
+            <li>🌍 Standard universel pour toutes les banques</li>
+            <li>⚡ Solution rapide à adopter, sans infrastructure lourde</li>
+        </ul>
+    </section>
+
+    <!-- Comment ça fonctionne -->
+    <section id="how-it-works" class="max-w-4xl mx-auto mt-20 px-4">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Comment ça fonctionne ?</h2>
+        <ol class="list-decimal list-inside space-y-3 text-lg text-gray-700 max-w-2xl mx-auto">
+            <li>L’émetteur génère un chèque digital via DigiCheck</li>
+            <li>Il signe électroniquement le chèque (clé privée sécurisée)</li>
+            <li>Le bénéficiaire consulte et encaisse facilement le chèque</li>
+        </ol>
+    </section>
+
+    <!-- Demo UI -->
+    <section id="demo" class="max-w-5xl mx-auto mt-20 px-4 text-center">
+        <h2 class="text-3xl font-semibold mb-6">Démo UI/UX</h2>
+        <p class="mb-8 max-w-2xl mx-auto text-gray-600">
+            Découvrez la maquette interactive de DigiCheck, pour visualiser l'expérience utilisateur.
+        </p>
+        <iframe src="./pages/dashboard.html" class="w-full h-[500px] rounded-lg border border-gray-300 shadow-md"
+            frameborder="0" title="Demo DigiCheck"></iframe>
+    </section>
+
+    <!-- Format JSON -->
+    <section id="format" class="max-w-4xl mx-auto mt-20 px-4 text-center">
+        <h2 class="text-3xl font-semibold mb-4">Format JSON universel</h2>
+        <p class="mb-4 max-w-2xl mx-auto text-gray-700">
+            DigiCheck repose sur un format JSON clair et standardisé, prêt pour l’intégration bancaire.
+            <br />
+            <a href="./docs/check-format.json" class="text-blue-600 underline hover:text-blue-700" target="_blank"
+                rel="noopener noreferrer">Voir le format JSON</a>
+        </p>
+    </section>
+
+    <!-- Appel à action -->
+    <section id="cta" class="bg-blue-600 text-white mt-20 py-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">Rejoignez l'aventure DigiCheck</h2>
+        <p class="mb-6 max-w-2xl mx-auto">
+            Vous êtes banque, fintech ou investisseur ? Contactez-nous pour collaborer ou explorez le projet sur GitHub.
+        </p>
+        <a href="https://github.com/tonpseudo/digicheck-landing" target="_blank" rel="noopener noreferrer"
+            class="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-100 transition">
+            Voir sur GitHub
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-6 text-center text-gray-500 text-sm">
+        &copy; 2025 DigiCheck • contact@digicheck.io
+    </footer>
+
+</body>
+
+</html>
