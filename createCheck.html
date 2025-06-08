@@ -1,0 +1,146 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8">
+    <div
+        class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 w-full max-w-5xl mx-auto border border-gray-200 h-[320px] md:h-[380px] flex flex-col relative">
+        <!-- En-tête de l'application bancaire -->
+        <div class="flex items-center justify-between mb-4">
+            <button class="text-gray-500 hover:text-gray-700 focus:outline-none" id="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-800 text-center flex-grow">Nouveau Chèque Virtuel</h2>
+            <button class="text-gray-500 hover:text-gray-700 focus:outline-none" id="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Zone de contenu principale du chèque - utilise une grille pour la disposition -->
+        <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 p-4">
+            <!-- Côté gauche du chèque -->
+            <div class="flex flex-col justify-between">
+                <div>
+                    <label for="beneficiary-name" class="block text-sm font-medium text-gray-700 mb-1">Payer à l'ordre
+                        de</label>
+                    <input type="text" name="beneficiary-name" id="beneficiary-name"
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-2 px-3 text-gray-900 placeholder-gray-400"
+                        placeholder="Nom du bénéficiaire">
+                    <input type="text" name="beneficiary-iban" id="beneficiary-iban"
+                        class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-2 px-3 text-gray-900 placeholder-gray-400"
+                        placeholder="IBAN du bénéficiaire">
+                    <button
+                        class="mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none">Rechercher
+                        par Numéro de Téléphone/Email</button>
+                </div>
+                <div class="mt-auto"> <!-- Poussé vers le bas -->
+                    <label for="label" class="block text-sm font-medium text-gray-700 mb-1">Libellé (Motif du
+                        Paiement)</label>
+                    <input type="text" name="label" id="label"
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-2 px-3 text-gray-900 placeholder-gray-400"
+                        placeholder="Ajouter un libellé (optionnel)">
+                </div>
+            </div>
+
+            <!-- Côté droit du chèque -->
+            <div class="flex flex-col justify-between items-end">
+                <div class="w-full">
+                    <label for="issue-date" class="block text-sm font-medium text-gray-700 mb-1 text-right">Date
+                        d'Émission</label>
+                    <input type="date" name="issue-date" id="issue-date" value="2025-06-04"
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-2 px-3 text-gray-900 text-right">
+                </div>
+                <div class="mt-auto w-full"> <!-- Poussé vers le bas -->
+                    <label for="amount" class="block text-sm font-medium text-gray-700 mb-1 text-right">Montant du
+                        Chèque</label>
+                    <div class="relative rounded-md shadow-sm">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-sm">₪</span>
+                        </div>
+                        <input type="text" name="amount" id="amount"
+                            class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-9 pr-3 py-2 border-gray-300 rounded-md text-gray-900 placeholder-gray-400 text-right"
+                            placeholder="10,000.00">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section inférieure pour le toggle de garantie et le message de sécurité, en dessous de la zone du chèque -->
+        <div class="mt-6 flex flex-col md:flex-row items-center justify-between px-4">
+            <div class="flex items-center mb-4 md:mb-0">
+                <span class="text-sm font-medium text-gray-700 mr-2">Chèque de Garantie</span>
+                <label for="guarantee-toggle" class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="guarantee-toggle" class="sr-only peer">
+                    <div
+                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                    </div>
+                </label>
+                <span class="text-gray-500 text-xs ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block align-middle" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="align-middle">Fonds réservés.</span>
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center text-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-2 4h4m6-10V7a4 4 0 00-4-4H8a4 4 0 00-4 4v3m0 7h16v-7H4v7z" />
+                </svg>
+                <span class="text-sm font-medium text-gray-600">Transaction sécurisée par [Nom de la Banque]</span>
+            </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+            <button
+                class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Émettre le Chèque Virtuel
+            </button>
+            <button
+                class="bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+                Annuler
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const amountInput = document.getElementById('amount');
+        amountInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/[^0-9.]/g, '');
+            let parts = value.split('.');
+            if (parts.length > 1) {
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                value = parts[0] + '.' + parts[1].substring(0, 2);
+            } else {
+                value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+            e.target.value = value;
+        });
+
+        const issueDateInput = document.getElementById('issue-date');
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        issueDateInput.value = `${yyyy}-${mm}-${dd}`;
+    });
+
+    document.getElementById('back-button').addEventListener('click', function () {
+        if (document.referrer && document.referrer !== window.location.href) {
+            // Il y a une page précédente dans l'historique
+            window.history.back();
+        } else {
+            // Pas de referrer ou page rechargée en direct : aller à l'accueil
+            window.location.href = 'index.html';
+        }
+    });
+</script>
