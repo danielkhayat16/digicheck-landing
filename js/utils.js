@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (document.referrer && document.referrer !== window.location.href) {
         history.back();
       } else {
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html";
       }
     });
   }
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.getElementById("close-button");
   if (closeButton) {
     closeButton.addEventListener("click", function () {
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
     });
   }
 });
