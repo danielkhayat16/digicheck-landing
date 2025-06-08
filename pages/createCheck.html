@@ -1,3 +1,4 @@
+<script src="../js/utils.js"></script>
 <div class="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8">
     <div
         class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 w-full max-w-5xl mx-auto border border-gray-200 h-[320px] md:h-[380px] flex flex-col relative">
@@ -98,7 +99,7 @@
         </div>
 
         <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-            <button
+            <button id="create-check-btn"
                 class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Émettre le Chèque Virtuel
             </button>
@@ -143,4 +144,30 @@
             window.location.href = 'index.html';
         }
     });
+
+    document.getElementById('create-check-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        createCheck();
+    });
+    function createCheck() {
+        const beneficiary = document.getElementById('beneficiary-name').value;
+        const iban = document.getElementById('beneficiary-iban').value;
+        const label = document.getElementById('label').value;
+        const issueDate = document.getElementById('issue-date').value;
+        const amount = document.getElementById('amount').value.replace(/,/g, '');
+        const guarantee = document.getElementById('guarantee-toggle').checked;
+
+        const check = {
+            beneficiary,
+            iban,
+            label,
+            issueDate,
+            amount,
+            guarantee
+        };
+
+        localStorage.setItem('currentCheck', JSON.stringify(check));
+        window.location.href = 'signCheck.html';
+    }
+
 </script>
