@@ -44,7 +44,7 @@ function goBackOrHome() {
   if (document.referrer && document.referrer !== location.href) {
     window.history.back();
   } else {
-    goToHome();
+    goToDashboard();
   }
 }
 
