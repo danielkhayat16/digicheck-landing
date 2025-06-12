@@ -27,7 +27,7 @@ function goToCreateCheck() {
 }
 
 function goToMyEmittedChecks() {
-  goTo("myEmittedCheck.html");
+  goTo("myEmittedCheckHistory.html");
 }
 
 function goToFAQ() {
