@@ -1,54 +1,54 @@
-
 /* style.css */
 
-/* --- Base & Utility Enhancements --- */
-
-/* Smooth scroll for anchor links */
-html {
-    scroll-behavior: smooth;
+/* Base font and background from the dashboard style */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F9FA; /* Light gray background */
+    color: #1a202c; /* Dark gray text */
+    line-height: 1.6; /* Ensure good readability */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
-/* Custom text selection color */
+/* Custom selection color */
 ::selection {
     background-color: #60a5fa; /* Tailwind blue-400 */
     color: #ffffff;
 }
 
-/* Optional: Slightly more refined body font if not using a custom font from Tailwind config */
-body {
-    line-height: 1.6;
-    /* You could import a custom font here if desired, e.g., Google Fonts */
-    /* font-family: 'Inter', sans-serif; */
+/* The 'card' style definition, directly copied from your dashboard HTML's <style> block */
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem; /* Increased padding for sections to give them more breathing room */
 }
 
-/* --- Component-Specific Refinements (Examples) --- */
-
-/* Enhance header shadow for more depth */
-header.bg-white {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+/* Custom styling for titles within sections for consistency with dashboard */
+section h2 {
+    text-align: center; /* Center titles */
+    margin-bottom: 1.5rem; /* Space below titles */
+    color: #1e3a8a; /* Darker blue for emphasis (Tailwind indigo-800) */
 }
 
-/* Add a subtle hover effect to section links/buttons that don't already have one */
-a.inline-block.mt-6:hover {
-    transform: translateY(-2px); /* Lift effect */
-    transition: all 0.2s ease-in-out;
+/* Add a subtle underline to titles similar to previous suggestion but adapted */
+section h2::after {
+    content: "";
+    display: block;
+    width: 70px; /* Slightly wider underline */
+    height: 4px; /* Thicker underline */
+    background-color: #3b82f6; /* Tailwind blue-500 */
+    margin: 1rem auto 0; /* Centered with more space below */
+    border-radius: 2px; /* Slightly rounded ends for the underline */
 }
 
-/* Adjust list item markers for consistency or style */
-ul.list-disc li::marker,
-ol.list-decimal li::marker {
-    color: #3b82f6; /* Tailwind blue-500 for markers */
+/* Specific adjustments for list items to ensure proper alignment with custom bullets/numbers */
+ul.list-disc li,
+ol.list-decimal li {
+    display: flex;
+    align-items: flex-start; /* Align text with the top of the marker */
 }
 
-/* --- Responsive Adjustments (if needed beyond Tailwind's utility classes) --- */
-
-/* Example: Adjust font size on smaller screens for better readability if not handled by Tailwind */
-@media (max-width: 768px) {
-    h1.text-4xl {
-        font-size: 2.5rem; /* Smaller on mobile */
-    }
-
-    h2.text-3xl {
-        font-size: 2rem;
-    }
+/* Ensure markers don't have default browser styling */
+ul.list-disc, ol.list-decimal {
+    list-style: none; /* Remove default markers */
 }
