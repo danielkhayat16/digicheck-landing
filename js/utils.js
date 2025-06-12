@@ -1,5 +1,5 @@
 const isLocal = window.location.protocol === "file:";
-const basePath = isLocal ? "" : "/digicheck-landing/";
+const basePath = isLocal ? "" : "/digicheck-landing/pages";
 
 function goTo(pagePath) {
   const fullPath = basePath + pagePath;
